@@ -97,7 +97,6 @@ const CoreServices: React.FC = () => {
               p: 3,
               bgcolor: "#fff",
               borderRadius: 3,
-              boxShadow: "0px 15px 40px rgba(0,0,0,0.08)",
                border: "1px solid #e6e6e9"
             }}
           >
