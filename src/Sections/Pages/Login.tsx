@@ -20,7 +20,7 @@ const LoginForm: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Email:", email, "Password:", password, "Remember Me:", rememberMe);
-    navigate("/forgot-password")
+    navigate("/dashboard")
   };
 
   const handleForgotPassword = () => {
@@ -130,7 +130,7 @@ const LoginForm: React.FC = () => {
               height: "21px",
               top: "1.5px",
               left: "1.5px",
-              color: "#000000",
+              color: "#101828",
               zIndex: 10
             }}
           >

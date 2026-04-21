@@ -6,7 +6,6 @@ const ForgotPassword: React.FC = () => {
   const navigate = useNavigate();
 
   const handleReset = () => {
-    // you can add validation or API call here later
     navigate("/new-password");
   };
 

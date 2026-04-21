@@ -20,7 +20,7 @@ const NewsletterSection: React.FC = () => {
           borderRadius: "16px",
           textAlign: "center",
           bgcolor: "#f9fafb",
-          mt: -5,
+          mt: -10,
         }}
       >
         <Typography

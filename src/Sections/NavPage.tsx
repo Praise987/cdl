@@ -23,19 +23,8 @@ const Navbar: React.FC = () => {
           component="img"
           src={Silverleaf}
           alt="Silverleaf Logo"
-          sx={{
-            width: 120,
-            height: "80px",
-            gap: "10px",
-            top: "16px",
-            right: "160px",
-            bottom: "16px",
-            left: "160px",
-            objectFit: "contain",
-          }}
-        />
+          sx={{width: 120, height: "80px", gap: "10px", top: "16px", right: "160px", bottom: "16px", left: "160px", objectFit: "contain",}}/>
 
-        {}
         <Box
           sx={{
             position: "absolute",
@@ -54,14 +43,13 @@ const Navbar: React.FC = () => {
             <Button color="inherit" component="a" href="/pricing">
               Pricing
               </Button>
-              <Button color="inherit" component="a" href="/api-docs" endIcon={<KeyboardArrowDownIcon />}
->
-  API Docs
+              <Button color="inherit" component="a" href="/api-docs" endIcon={<KeyboardArrowDownIcon />}>
+   API Docs
 </Button>
         </Box>
 
     
-        <Box sx={{ display: "flex", width: "299px", flow: "horizontal", height: "48px", gap: "8px"}}>
+        <Box sx={{ display: "flex", width: "100%", flow: "horizontal", height: "48px", gap: "8px"}}>
           <Button color="inherit" onClick={handleOpen}>
             Login
           </Button>
@@ -80,9 +68,7 @@ const Navbar: React.FC = () => {
           <Dialog open={openLogin} onClose={handleClose}>
         <LoginForm />
       </Dialog>
-        
-
-      </Toolbar>
+        </Toolbar>
     </AppBar>
   );
 };
