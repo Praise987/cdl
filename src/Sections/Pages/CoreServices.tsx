@@ -70,7 +70,7 @@ const CoreServices: React.FC = () => {
               height: "265px",
               gap: "24px",
               p: 3,
-              bgcolor: "#fff",
+              bgcolor: "#ffffff",
               borderRadius: 3,
               boxShadow: "0px 10px 30px rgba(0,0,0,0.05)",
                border: "1px solid #e6e6e9"
@@ -97,7 +97,8 @@ const CoreServices: React.FC = () => {
               p: 3,
               bgcolor: "#fff",
               borderRadius: 3,
-               border: "1px solid #e6e6e9"
+              boxShadow: "0px 15px 40px rgba(0,0,0,0.08)",
+               border: "1px solid #ffffff"
             }}
           >
             <Box sx={{ mb: 2 }}>
@@ -115,7 +116,7 @@ const CoreServices: React.FC = () => {
         </Box>
 
        
-        <Box sx={{ width: "100%", height: "567.02px", position: "relative" }}>
+        <Box sx={{ width: "584px", height: "567.02px", position: "relative" }}>
           <Typography
             variant="h3"
             sx={{ fontWeight: 700, color: "#101828", mb: 3 }}

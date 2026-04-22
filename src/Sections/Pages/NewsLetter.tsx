@@ -13,22 +13,13 @@ const NewsletterSection: React.FC = () => {
     >
       <Paper
         elevation={0}
-        sx={{
-          width: "100%",
-          maxWidth: 900,
-          top:  "180px",
-          borderRadius: "16px",
-          textAlign: "center",
-          bgcolor: "#f9fafb",
-          mt: -10,
-        }}
-      >
+        sx={{width: "100%", maxWidth: 900, top: "180px", borderRadius: "16px", textAlign: "center", bgcolor: "#f9fafb", mt: -8, height: "280px", }}>
         <Typography
           variant="h4"
           sx={{
             fontWeight: 700,
             mb: 2,
-            color: "#111827",
+            color: "#101828",
           }}
         >
           Sign up for our newsletter
@@ -72,10 +63,6 @@ const NewsletterSection: React.FC = () => {
               borderRadius: "8px",
               textTransform: "none",
               fontWeight: 600,
-              "&:hover": {
-                bgcolor: "#1f2937",
-                
-              },
             }}
           >
             Subscribe

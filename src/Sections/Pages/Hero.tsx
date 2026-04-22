@@ -114,9 +114,8 @@ const Hero: React.FC = () => {
             variant="contained"
             sx={{
               mt: 3,
-              bgcolor: "#fff",
+              bgcolor: "#ffffff",
               color: "#101828",
-              textTransform: "none",
             }}
           >
             Get Started
@@ -140,7 +139,6 @@ const Hero: React.FC = () => {
               position: "absolute",
               top: "50%",
               left: "50%",
-              transform: "translate(-50%, -50%)",
               width: 50,
               height: 50,
               borderRadius: "50%",
@@ -148,10 +146,7 @@ const Hero: React.FC = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              cursor: "pointer",
-              "&:hover": {
-                transform: "translate(-50%, -50%) scale(1.1)",
-              },
+              cursor: "pointer"
             }}
           >
             <PlayArrowIcon sx={{ color: "#101828" }} />

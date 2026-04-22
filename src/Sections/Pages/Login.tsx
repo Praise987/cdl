@@ -113,9 +113,9 @@ const LoginForm: React.FC = () => {
         <Button
           onClick={handleOpenSignup}
           variant="contained"
-          sx={{ backgroundColor: "#12EA" }}
+          sx={{ backgroundColor: "#ffffff", color: "#101828", border: "1px solid #E5E7EB" }}
         >
-          Sign Up
+          Sign Up with Google 
         </Button>
       </Box>
 
