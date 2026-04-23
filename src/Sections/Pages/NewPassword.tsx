@@ -35,7 +35,7 @@ const NewPassword: React.FC = () => {
                      </Typography>
 
                      <Typography variant="body2" sx={{ fontWeight: 500, mt: 2 }}>
-                       confirm password
+                       Confirm password
                      </Typography>
                      <TextField
                        fullWidth

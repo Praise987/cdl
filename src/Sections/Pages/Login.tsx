@@ -1,38 +1,55 @@
-import React, { useState } from "react";
-import {Box, TextField, Button, Typography, FormControlLabel, Checkbox, Link, Dialog, DialogContent, IconButton} from "@mui/material";
+import React from "react";
+import {Box, TextField, Button, Typography, FormControlLabel, Checkbox, Link, Dialog, DialogContent, IconButton,} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import SignupForm from "./SignupForm";
-import CancelIcon from "@mui/icons-material/Cancel";
-import {navigate} from "react-router-dom";
+import CloseIcon from "@mui/icons-material/Cancel";
+import * as Yup from "yup";
+import { useFormik } from "formik";
 
 const LoginForm: React.FC = () => {
   const navigate = useNavigate();
-
-  const [openSignup, setOpenSignup] = useState(false);
+  const [openSignup, setOpenSignup] = React.useState(false);
 
   const handleOpenSignup = () => setOpenSignup(true);
   const handleCloseSignup = () => setOpenSignup(false);
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
+  
+  const validationSchema = Yup.object({
+    email: Yup.string()
+      .email("Invalid email format")
+      .matches(/@fcmb\.com$/, "Email must end with @fcmb.com")
+      .required("Email is required"),
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Email:", email, "Password:", password, "Remember Me:", rememberMe);
-    navigate("/dashboard")
-  };
+    password: Yup.string()
+      .min(8, "Password must be at least 8 characters")
+      .matches(/[a-z]/, "Must contain at least one lowercase letter")
+      .matches(/[A-Z]/, "Must contain at least one uppercase letter")
+      .matches(/[0-9]/, "Must contain at least one number")
+      .matches(/[^a-zA-Z0-9]/, "Must contain at least one special character")
+      .required("Password is required"),
+    rememberMe: Yup.boolean(),
+  });
 
-  const handleForgotPassword = () => {
-    setOpenSignup(false);
-    navigate("/forgot-password");
-  };
+ 
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+      rememberMe: false,
+    },
+    validationSchema,
+    onSubmit: (values) => {
+      console.log(values);
+      navigate("/dashboard");
+    },
+  });
 
   return (
     <>
+  
       <Box
         component="form"
-        onSubmit={handleSubmit}
+        onSubmit={formik.handleSubmit}
         sx={{
           display: "flex",
           flexDirection: "column",
@@ -43,7 +60,14 @@ const LoginForm: React.FC = () => {
           border: "1px solid #D0D5DD",
         }}
       >
-        <Typography variant="h5" sx={{ fontWeight: "bold" }}>
+
+         <IconButton
+        sx={{ position: "absolute", top: 10, right: 10 }}
+      >
+        <CloseIcon />
+      </IconButton>
+
+        <Typography variant="h5" sx={{ fontWeight: "800" }}>
           Welcome Back
         </Typography>
 
@@ -51,24 +75,33 @@ const LoginForm: React.FC = () => {
           Please enter your details to login
         </Typography>
 
+        
         <Typography variant="subtitle2">Email</Typography>
         <TextField
+          name="email"
           type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
           placeholder="Please enter your email"
-          required
+          value={formik.values.email}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          error={formik.touched.email && Boolean(formik.errors.email)}
+          helperText={formik.touched.email && formik.errors.email}
         />
 
+        
         <Typography variant="subtitle2">Password</Typography>
         <TextField
+          name="password"
           type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
           placeholder="Please enter your password"
-          required
+          value={formik.values.password}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          error={formik.touched.password && Boolean(formik.errors.password)}
+          helperText={formik.touched.password && formik.errors.password}
         />
 
+        
         <Box
           sx={{
             display: "flex",
@@ -79,8 +112,9 @@ const LoginForm: React.FC = () => {
           <FormControlLabel
             control={
               <Checkbox
-                checked={rememberMe}
-                onChange={(e) => setRememberMe(e.target.checked)}
+                name="rememberMe"
+                checked={formik.values.rememberMe}
+                onChange={formik.handleChange}
               />
             }
             label="Remember for 30 days"
@@ -88,38 +122,40 @@ const LoginForm: React.FC = () => {
 
           <Link
             component="button"
-           sx={{ cursor: "pointer", color: "#1976d2" }} onClick={() => navigate("/forgot-password")}
+            sx={{ cursor: "pointer", color: "#1976d2" }}
+            onClick={() => navigate("/forgot-password")}
           >
             Forgot your password?
           </Link>
         </Box>
 
+        
         <Button
           type="submit"
           variant="contained"
-          onClick={() => navigate("/Dashboard")}
           sx={{ backgroundColor: "#1E2A38" }}
         >
           Login
         </Button>
 
-        <Typography
-          variant="body2"
-          sx={{ textAlign: "center", opacity: 0.6 }}
-        >
+        <Typography variant="body2" sx={{ textAlign: "center", opacity: 0.6 }}>
           OR
         </Typography>
 
         <Button
           onClick={handleOpenSignup}
           variant="contained"
-          sx={{ backgroundColor: "#ffffff", color: "#101828", border: "1px solid #E5E7EB" }}
+          sx={{
+            backgroundColor: "#ffffff",
+            color: "#101828",
+            border: "1px solid #E5E7EB",
+          }}
         >
-          Sign Up with Google 
+          Sign Up with Google
         </Button>
       </Box>
 
-     
+      
       <Dialog open={openSignup} onClose={handleCloseSignup}>
         <Box sx={{ position: "relative", padding: 2 }}>
           <IconButton
@@ -131,16 +167,15 @@ const LoginForm: React.FC = () => {
               top: "1.5px",
               left: "1.5px",
               color: "#101828",
-              zIndex: 10
+              zIndex: 10,
             }}
           >
-            <CancelIcon />
+            <CloseIcon />
           </IconButton>
 
-
           <DialogContent>
-      <SignupForm />
-    </DialogContent>
+            <SignupForm />
+          </DialogContent>
         </Box>
       </Dialog>
     </>

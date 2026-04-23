@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Box, Typography, Button, AppBar, Toolbar, Dialog,} from "@mui/material";
+import {Box, Typography, Button, AppBar, Toolbar, Dialog, DialogContent} from "@mui/material";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useNavigate } from "react-router-dom";
@@ -10,11 +10,12 @@ import Group43 from "../../assets/images/Group43.png";
 import Group46 from "../../assets/images/Group46.png";
 import Silverleaf from "../../assets/images/Silverleaf.png";
 import LoginForm from "../../Sections/Pages/Login.tsx";
+import SignupForm from "../../Sections/Pages/SignUpForm.tsx";
 
 const Hero: React.FC = () => {
   const navigate = useNavigate();
   const [openLogin, setOpenLogin] = useState(false);
-
+  const [openSignup, setOpenSignup] = useState(false);
   return (
     <Box sx={{ position: "relative", minHeight: "100vh" }}>
       <AppBar
@@ -36,7 +37,7 @@ const Hero: React.FC = () => {
             sx={{ width: 120, height: 80, objectFit: "contain" }}
           />
 
-          <Box sx={{ display: "flex", gap: 4 }}>
+          <Box sx={{ display: "flex", gap: 4, fontFamily: "Inter", fontSize: "16px", color: "#ffffff", letterspacing: "0%", lineHeight: "100%" }}>
             <Button color="inherit" href="/products">
               Product
             </Button>
@@ -52,24 +53,27 @@ const Hero: React.FC = () => {
             </Button>
           </Box>
 
-          <Box sx={{ display: "flex", gap: 1 }}>
+          <Box sx={{ display: "flex", gap: 1, fontFamily: "Inter", fontSize: "16px", color: "#ffffff", letterspacing: "0%", lineHeight: "100%" }}>
             <Button color="inherit" onClick={() => setOpenLogin(true)}>
               Login
             </Button>
 
-            <Button
-              variant="contained"
-              onClick={() => navigate("/GetStarted")}
-              sx={{ bgcolor: "#fff", color: "#333" }}
-            >
-              Get Started
-            </Button>
+            <Button variant="contained"
+             onClick={() => setOpenSignup(true)}
+             sx={{ bgcolor: "#fff", color: "#101828" }}
+             >
+               Get Started
+               </Button>
           </Box>
         </Toolbar>
       </AppBar>
 
       <Dialog open={openLogin} onClose={() => setOpenLogin(false)}>
         <LoginForm />
+      </Dialog>
+
+      <Dialog open={openSignup} onClose={() => setOpenSignup(false)}>
+        <SignupForm />
       </Dialog>
 
       <Box
@@ -108,18 +112,14 @@ const Hero: React.FC = () => {
             Powering smarter loan decisions with verified data & API driven
             infrastructure
           </Typography>
-
           <Button
-            onClick={() => navigate("/GetStarted")}
-            variant="contained"
-            sx={{
-              mt: 3,
-              bgcolor: "#ffffff",
-              color: "#101828",
-            }}
-          >
-            Get Started
-          </Button>
+        variant="contained"
+        onClick={() => setOpenSignup(true)}
+        sx={{ mt: 4, bgcolor: "#fff", color: "#101828" }}
+      >
+        Get Started
+      </Button>
+
         </Box>
 
         <Box sx={{ position: "relative" }}>
@@ -155,19 +155,19 @@ const Hero: React.FC = () => {
           <Box
             component="img"
             src={Group12}
-            sx={{ position: "absolute", top: 20, left: 10, width: 281 }}
+            sx={{ position: "absolute", top: -8, left: 10, width: 281 }}
           />
 
           <Box
             component="img"
             src={Group43}
-            sx={{ position: "absolute", top: 60, right: 180, width: 109 }}
+            sx={{ position: "absolute", top: 25, right: 200, width:70, height: 70, zIndex: -1 }}
           />
 
           <Box
             component="img"
             src={Group46}
-            sx={{ position: "absolute", top: 80, right: 10, width: 281 }}
+            sx={{ position: "absolute", top: 20, right: 10, width: 281 }}
           />
         </Box>
       </Box>

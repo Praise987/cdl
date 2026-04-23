@@ -6,6 +6,10 @@ import { useNavigate } from "react-router-dom";
 
 const CoreServices: React.FC = () => {
   const navigate = useNavigate();
+  const [openSignup, setOpenSignup] = React.useState(false);
+  const handleOpenSignup = () => setOpenSignup(true);
+  const handleCloseSignup = () => setOpenSignup(false);
+  
   return (
     <Box sx={{ px: 10, py: 12,  flow: "vertical", bgcolor: "#ffffff" }}>
       
@@ -128,7 +132,7 @@ const CoreServices: React.FC = () => {
             From verifying data to booking loans and managing disbursements, our APIs do the heavy lifting so you can focus on growing your lending business.
           </Typography>
 
-          <Button  onClick={() => navigate("/GetStarted")}
+          <Button onClick={handleOpenSignup}
             variant="contained"
             sx={{
               bgcolor: "#101828",

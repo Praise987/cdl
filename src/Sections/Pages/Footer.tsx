@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
     <Box
       sx={{
         backgroundColor: "#101828",
-        color: "#A0AEC0",
+        color: "#ffffff",
         px: { xs: 3, md: 10 },
         py: 6,
       }}
@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
       
 
           
-          <Box sx={{ display: "flex", gap: 3 }}>
+          <Box sx={{ display: "flex", gap: 3, fontFamily: "Inter", fontSize: "16px", color: "#ffffff", letterspacing: "0%", lineHeight: "100%" }}>
             <Link href="#" underline="none" color="inherit">
               Home
             </Link>
@@ -39,8 +39,8 @@ const Footer: React.FC = () => {
               Pricing
             </Link>
 
-            <Box sx={{ display: "flex", alignItems: "center" }}>
-              <Link href="#" underline="none" color="inherit">
+            <Box sx={{ display: "flex", alignItems: "center", fontFamily: "Inter", fontSize: "16px", color: "#ffffff", letterspacing: "0%", lineHeight: "100%" }}>
+              <Link href="#" underline="none" color="inherit" >
                 API Docs
               </Link>
               <KeyboardArrowDownIcon fontSize="small" />
