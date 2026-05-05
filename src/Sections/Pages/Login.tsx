@@ -1,7 +1,7 @@
 import React from "react";
 import {Box, TextField, Button, Typography, FormControlLabel, Checkbox, Link, Dialog, DialogContent, IconButton,} from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import SignupForm from "./SignupForm";
+import SignUpForm from "./SignupForm";
 import CloseIcon from "@mui/icons-material/Cancel";
 import * as Yup from "yup";
 import { useFormik } from "formik";
