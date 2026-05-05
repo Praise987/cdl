@@ -73,7 +73,7 @@ const Hero: React.FC = () => {
       </Dialog>
 
       <Dialog open={openSignup} onClose={() => setOpenSignup(false)}>
-        <SignupForm />
+        <SignUpForm />
       </Dialog>
 
       <Box

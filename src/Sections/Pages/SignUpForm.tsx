@@ -18,9 +18,9 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-const SignupForm: React.FC = () => {
+const SignUpForm: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [open, setOpen] = useState(false); // ✅ Dialog state
+  const [open, setOpen] = useState(false);
 
   const validationSchema = Yup.object({
     fullName: Yup.string().required("Full name is required"),
@@ -266,4 +266,4 @@ const SignupForm: React.FC = () => {
   );
 };
 
-export default SignupForm;
+export default SignUpForm;
