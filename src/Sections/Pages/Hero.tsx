@@ -10,7 +10,7 @@ import Group43 from "../../assets/images/Group43.png";
 import Group46 from "../../assets/images/Group46.png";
 import Silverleaf from "../../assets/images/Silverleaf.png";
 import LoginForm from "../../Sections/Pages/Login.tsx";
-import SignupForm from "../../Sections/Pages/SignUpForm.tsx";
+import SignUpForm from "../../Sections/Pages/SignUpForm.tsx";
 
 const Hero: React.FC = () => {
   const navigate = useNavigate();

@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import FeatureIcon from "../../assets/images/FeatureIcon.png";
-import SignupForm from "./SignupForm";
+import SignUpForm from "./SignupForm";
 import { useNavigate } from "react-router-dom";
 
 const CoreServices: React.FC = () => {
