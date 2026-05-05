@@ -42,7 +42,7 @@ const Features: React.FC = () => {
           wallet, and start giving out loan in no time.
         </Typography>
       </Box>
-
+  
       <Box
         sx={{
           display: "flex",
