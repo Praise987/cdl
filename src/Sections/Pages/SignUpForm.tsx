@@ -51,7 +51,7 @@ const SignUpForm: React.FC = () => {
     onSubmit: (values) => {
       console.log(values);
 
-      // ✅ Open success dialog instead of navigating
+      
       setOpen(true);
     },
   });
@@ -242,7 +242,6 @@ const SignUpForm: React.FC = () => {
         </form>
       </Box>
 
-      {/* ✅ SUCCESS DIALOG */}
       <Dialog open={open} onClose={() => setOpen(false)}>
         <DialogContent sx={{ textAlign: "center", p: 4 }}>
           <Typography variant="h5" mb={2}>

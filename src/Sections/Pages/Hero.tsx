@@ -12,8 +12,6 @@ import Silverleaf from "../../assets/images/Silverleaf.png";
 import LoginForm from "../../Sections/Pages/Login.tsx";
 import SignUpForm from "../../Sections/Pages/SignUpForm.tsx";
 
-
-
 const Hero: React.FC = () => {
   const navigate = useNavigate();
   const [openLogin, setOpenLogin] = useState(false);
@@ -38,7 +36,7 @@ const Hero: React.FC = () => {
             alt="Logo"
             sx={{ width: 120, height: 80, objectFit: "contain" }}
           />
-
+          
           <Box sx={{ display: "flex", gap: 4, fontFamily: "Inter", fontSize: "16px", color: "#ffffff", letterspacing: "0%", lineHeight: "100%" }}>
             <Button color="inherit" href="/products">
               Product
