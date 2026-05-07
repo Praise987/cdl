@@ -1,7 +1,7 @@
 import React from "react";
 import {Box, TextField, Button, Typography, FormControlLabel, Checkbox, Link, Dialog, DialogContent, IconButton,} from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import SignUpForm from "./SignupForm";
+import SignUpForm from "./SignUpForm";
 import CloseIcon from "@mui/icons-material/Cancel";
 import * as Yup from "yup";
 import { useFormik } from "formik";
@@ -61,11 +61,12 @@ const LoginForm: React.FC = () => {
         }}
       >
 
-         <IconButton
-        sx={{ position: "absolute", top: 10, right: 10 }}
-      >
-        <CloseIcon />
-      </IconButton>
+        <IconButton
+        onClick={() => window.history.back()}
+        sx={{ position: "absolute", top: 10, right: 10 }}>
+           <CloseIcon />
+           </IconButton>
+    
 
         <Typography variant="h5" sx={{ fontWeight: "800" }}>
           Welcome Back
@@ -174,7 +175,7 @@ const LoginForm: React.FC = () => {
           </IconButton>
 
           <DialogContent>
-            <SignupForm />
+            <SignUpForm />
           </DialogContent>
         </Box>
       </Dialog>

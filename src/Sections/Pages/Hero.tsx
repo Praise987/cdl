@@ -12,6 +12,8 @@ import Silverleaf from "../../assets/images/Silverleaf.png";
 import LoginForm from "../../Sections/Pages/Login.tsx";
 import SignUpForm from "../../Sections/Pages/SignUpForm.tsx";
 
+
+
 const Hero: React.FC = () => {
   const navigate = useNavigate();
   const [openLogin, setOpenLogin] = useState(false);
@@ -67,14 +69,18 @@ const Hero: React.FC = () => {
           </Box>
         </Toolbar>
       </AppBar>
-
-      <Dialog open={openLogin} onClose={() => setOpenLogin(false)}>
-        <LoginForm />
-      </Dialog>
-
-      <Dialog open={openSignup} onClose={() => setOpenSignup(false)}>
-        <SignUpForm />
-      </Dialog>
+          
+<Dialog open={openLogin} onClose={() => setOpenLogin(false)}
+sx={{ zIndex: 2000 }}>
+  <DialogContent>
+    <LoginForm />
+  </DialogContent>
+</Dialog>
+    <Dialog open={openSignup} onClose={() => setOpenSignup(false)}>
+  <DialogContent>
+    <SignUpForm />
+  </DialogContent>
+</Dialog>
 
       <Box
         component="img"
@@ -87,7 +93,7 @@ const Hero: React.FC = () => {
           zIndex: 0,
         }}
       />
-
+        
       <Box
         sx={{
           position: "relative",
@@ -99,6 +105,7 @@ const Hero: React.FC = () => {
           px: 10,
         }}
       >
+        
         <Box sx={{ color: "#fff", maxWidth: "600px" }}>
           <Typography sx={{ fontWeight: 700, fontSize: 48 }}>
             Smarter Loans
@@ -121,7 +128,7 @@ const Hero: React.FC = () => {
       </Button>
 
         </Box>
-
+        
         <Box sx={{ position: "relative" }}>
           <Box
             component="img"
@@ -133,7 +140,7 @@ const Hero: React.FC = () => {
               boxShadow: "0 20px 60px rgba(0,0,0,0.4)",
             }}
           />
-
+        
           <Box
             sx={{
               position: "absolute",
@@ -142,7 +149,7 @@ const Hero: React.FC = () => {
               width: 50,
               height: 50,
               borderRadius: "50%",
-              bgcolor: "rgba(255,255,255,0.9)",
+              bgcolor: "#ffffff",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
