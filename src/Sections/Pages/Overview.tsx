@@ -36,7 +36,7 @@ type RowData = {
   amount: number;
   status: string;
 };
-
+  
 function createData(
   date: string,
   transactionId: number,
@@ -91,7 +91,7 @@ const SidebarItem = ({
     </Typography>
   </Box>
 );
-
+  
 const Dashboard: React.FC = () => {
   return (
     <Box sx={{ display: "flex", bgcolor: "#f5f6f8", minHeight: "100vh" }}>
@@ -120,7 +120,7 @@ const Dashboard: React.FC = () => {
 
       </Box>
       
-     
+      
       <Box sx={{ flex: 1, p: 4 }}>
        
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -152,7 +152,7 @@ const Dashboard: React.FC = () => {
               </Button>
             </CardContent>
           </Card>
-
+        
           <Card>
             <CardContent>
               <Typography>API Usage</Typography>

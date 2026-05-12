@@ -1,6 +1,13 @@
 import React from "react";
-import { Box, Typography, Button, TextField, Stack } from "@mui/material";
-import { Link, useNavigate } from "react-router-dom";
+import {
+  Box,
+  Typography,
+  Button,
+  TextField,
+  Stack,
+} from "@mui/material";
+
+import { useNavigate } from "react-router-dom";
 
 const ForgotPassword: React.FC = () => {
   const navigate = useNavigate();
@@ -12,83 +19,96 @@ const ForgotPassword: React.FC = () => {
   return (
     <Box
       sx={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        bgcolor: "#f9fafb",
-        px: 2,
+        width: "100%",
+        maxWidth: 1000,
+        margin: "auto",
+        backgroundColor: "#ffffff",
+        borderRadius: 4,
+        padding: 4,
+        boxShadow: "0px 10px 40px rgba(0,0,0,0.15)",
       }}
     >
-      <Box
-        sx={{
-          width: "100%",
-          maxWidth: 400,
-          p: 4,
-          bgcolor: "#fff",
-          borderRadius: 3,
-          boxShadow: "0px 8px 24px rgba(0,0,0,0.08)",
-        }}
-      >
-        <Stack spacing={2}>
-          <Typography
-            variant="h5"
-            sx={{
-              fontWeight: 600,
-              textAlign: "center",
-              color: "#101828",
-            }}
-          >
-            Forgot Password
-          </Typography>
+      <Stack spacing={2}>
+        {/* Heading */}
+        <Typography
+          variant="h5"
+          sx={{
+            fontWeight: 700,
+            textAlign: "center",
+            color: "#101828",
+          }}
+        >
+          Forgot Password
+        </Typography>
 
-          <Typography
-            variant="body2"
-            sx={{ textAlign: "center", color: "#667085" }}
-          >
-            No worries, we’ll send you reset instructions.
-          </Typography>
+        {/* Subtitle */}
+        <Typography
+          variant="body2"
+          sx={{
+            textAlign: "center",
+            color: "#667085",
+          }}
+        >
+          No worries, we’ll send you reset instructions.
+        </Typography>
 
-          <TextField
-            fullWidth
-            label="Email Address"
-            variant="outlined"
-            type="email"
-          />
+        {/* Email Field */}
+        <TextField
+          fullWidth
+          label="Email Address"
+          variant="outlined"
+          type="email"
+        />
 
-          <Button
-            variant="contained"
-            fullWidth
-            onClick={handleReset}
-            sx={{
-              mt: 1,
-              py: 1.2,
-              textTransform: "none",
-              fontWeight: 500,
-              borderRadius: 2,
-            }}
-          >
-            Reset Password
-          </Button>
+        {/* Reset Button */}
+        <Button
+          variant="contained"
+          fullWidth
+          onClick={handleReset}
+          sx={{
+            mt: 1,
+            py: 1.3,
+            textTransform: "none",
+            fontWeight: 600,
+            borderRadius: 2,
+            backgroundColor: "#1E2A38",
 
-          <Typography
-            variant="body2"
-            sx={{ textAlign: "center", mt: 1 }}
-          >
-            Remember your password?{" "}
-            <Link
-              to="/login"
-              style={{
-                textDecoration: "none",
-                color: "#1976d2",
-                fontWeight: 500,
-              }}
-            >
-              Back to login
-            </Link>
-          </Typography>
-        </Stack>
-      </Box>
+            "&:hover": {
+              backgroundColor: "#111927",
+            },
+          }}
+        >
+          Reset Password
+        </Button>
+
+        {/* Back to Login */}
+        <Typography
+          variant="body2"
+          sx={{
+            textAlign: "center",
+            mt: 1,
+            color: "#667085",
+          }}
+        >
+          Remember your password?
+        </Typography>
+
+        <Button
+          variant="text"
+          onClick={() => navigate("/login")}
+          sx={{
+            textTransform: "none",
+            fontWeight: 600,
+            color: "#1976d2",
+
+            "&:hover": {
+              backgroundColor: "transparent",
+            },
+          }}
+        >
+          Back to login
+        </Button>
+      </Stack>
     </Box>
   );
 };
