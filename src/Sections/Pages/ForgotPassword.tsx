@@ -29,7 +29,7 @@ const ForgotPassword: React.FC = () => {
       }}
     >
       <Stack spacing={2}>
-        {/* Heading */}
+        
         <Typography
           variant="h5"
           sx={{
@@ -41,7 +41,7 @@ const ForgotPassword: React.FC = () => {
           Forgot Password
         </Typography>
 
-        {/* Subtitle */}
+      
         <Typography
           variant="body2"
           sx={{
@@ -52,7 +52,7 @@ const ForgotPassword: React.FC = () => {
           No worries, we’ll send you reset instructions.
         </Typography>
 
-        {/* Email Field */}
+       
         <TextField
           fullWidth
           label="Email Address"
@@ -60,7 +60,7 @@ const ForgotPassword: React.FC = () => {
           type="email"
         />
 
-        {/* Reset Button */}
+        
         <Button
           variant="contained"
           fullWidth
@@ -81,7 +81,7 @@ const ForgotPassword: React.FC = () => {
           Reset Password
         </Button>
 
-        {/* Back to Login */}
+       
         <Typography
           variant="body2"
           sx={{

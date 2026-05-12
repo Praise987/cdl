@@ -61,7 +61,7 @@ const LoginForm: React.FC = () => {
 
   return (
     <>
-      {/* LOGIN CARD (NO STAKING CONTEXT TRAPS) */}
+      
       <Box
         component="form"
         onSubmit={formik.handleSubmit}
@@ -188,7 +188,7 @@ const LoginForm: React.FC = () => {
         </Button>
       </Box>
 
-      {/* SIGNUP DIALOG */}
+    
       <Dialog
         open={openSignup}
         onClose={() => setOpenSignup(false)}
@@ -200,7 +200,7 @@ const LoginForm: React.FC = () => {
         </DialogContent>
       </Dialog>
 
-      {/* FORGOT PASSWORD — FIXED LAYERING */}
+     
       <Dialog
         open={openForgotPassword}
         onClose={() =>
