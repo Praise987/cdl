@@ -15,6 +15,7 @@ const Footer: React.FC = () => {
         py: 6,
       }}
     >
+     
       <Box
         sx={{
           display: "flex",
@@ -22,54 +23,40 @@ const Footer: React.FC = () => {
           alignItems: "center",
           flexWrap: "wrap",
           gap: 2,
-          flow: "vertical"
+          mb: 4,
         }}
       >
-      
-
-          
-          <Box sx={{ display: "flex", gap: 3, fontFamily: "Inter", fontSize: "16px", color: "#ffffff", letterspacing: "0%", lineHeight: "100%" }}>
-            <Link href="#" underline="none" color="inherit">
-              Home
-            </Link>
-            <Link href="#" underline="none" color="inherit">
-              Products
-            </Link>
-            <Link href="#" underline="none" color="inherit">
-              Pricing
-            </Link>
-
-            <Box sx={{ display: "flex", alignItems: "center", fontFamily: "Inter", fontSize: "16px", color: "#ffffff", letterspacing: "0%", lineHeight: "100%" }}>
-              <Link href="#" underline="none" color="inherit" >
-                API Docs
-              </Link>
-              <KeyboardArrowDownIcon fontSize="small" />
-            </Box>
+        <Box
+          sx={{
+            display: "flex",
+            gap: 3,
+            fontFamily: "Inter",
+            fontSize: "16px",
+            color: "#ffffff",
+            lineHeight: "100%",
+          }}
+        >
+          <Link href="#" underline="none" color="inherit">Home</Link>
+          <Link href="#" underline="none" color="inherit">Products</Link>
+          <Link href="#" underline="none" color="inherit">Pricing</Link>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Link href="#" underline="none" color="inherit">API Docs</Link>
+            <KeyboardArrowDownIcon fontSize="small" />
           </Box>
         </Box>
 
-
-      
-      <Box
-        sx={{left: "45%", display: "flex", gap: 6, justifyContent: "center", mt: 4, top: "50%", position: "relative" }}>
-          <IconButton sx={{ color: "#A0AEC0" }}>
-            <TwitterIcon />
-          </IconButton>
-          <IconButton sx={{ color: "#A0AEC0" }}>
-            <LinkedInIcon />
-          </IconButton>
-          <IconButton sx={{ color: "#A0AEC0" }}>
-            <FacebookIcon />
-          </IconButton>
+        
+        <Box sx={{ display: "flex", gap: 1 }}>
+          <IconButton sx={{ color: "#A0AEC0" }}><TwitterIcon /></IconButton>
+          <IconButton sx={{ color: "#A0AEC0" }}><LinkedInIcon /></IconButton>
+          <IconButton sx={{ color: "#A0AEC0" }}><FacebookIcon /></IconButton>
         </Box>
-      
+      </Box>
 
-      
-      <Divider sx={{ my: 4, borderColor: "#2D3748" }} />
+      <Divider sx={{ borderColor: "#2D3748" }} />
 
-      
-      <Typography variant="body2">
-        (c) 2025 Silverleaf. All rights reserved.
+      <Typography variant="body2" sx={{ mt: 4 }}>
+        © 2025 Silverleaf. All rights reserved.
       </Typography>
     </Box>
   );

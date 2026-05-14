@@ -11,8 +11,12 @@ body {
   overflow-x: hidden;
   background: black;
 }
-*{
-    font-family: "Inter", sans-serif;
 
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
-
+img {
+  max-width: 100%;
+  display: block;
+}
